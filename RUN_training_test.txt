@@ -1,0 +1,17 @@
+How to load LIDC_training
+# python exec.py --mode train --exp_source experiments/lidc_exp_malignancy/ --exp_dir ../RetinaModels/LIDC-RetI3d-model_startori
+# python exec.py --mode test --exp_dir LIDC-Retina-model
+# python exec.py --mode train_test --folds 0 --exp_source experiments/lidc_exp_texture/ --exp_dir ../RetinaModels/LIDC-Retina-model_10Epoch
+# python exec.py --mode train_test --folds 0 --exp_source experiments/moscow_exp_texture/ --exp_dir ../RetinaModels/Moscow-Retina-model_10Epoch 
+
+Resume from checkpoint
+python exec.py --mode train_test --folds 0 --exp_source experiments/moscow_exp_subtlety/ --exp_dir ../RetinaModels/Moscow-Retina-Solidity_Transfer_50Epoch --resume_to_checkpoint ../WeightRetina3DLIDC/fold_0/86_best_params.pth
+
+Transfer weight I3d --> line 380 retina_net.py
+##### Moscow
+python exec.py --mode train_test --folds 0 --exp_source experiments/moscow_exp_subtlety/ --exp_dir ../RetinaModels/Moscow-RetI3D-Solidity_TransferI3D_LRonPlateau_100Epoch --rgb_weights_path weight/model_rgb.pth
+
+python exec.py --mode train_test --folds 0 --exp_source experiments/moscow_exp_subtlety_debug/ --exp_dir ../RetinaModels/Moscow-RetI3D-Agnostic_TransferI3D_100Epoch --rgb_weights_path weight/model_rgb.pth
+
+##### LIDC 
+python exec.py --mode train_test --folds 0 --exp_source experiments/lidc_exp_subtlety/ --exp_dir ../RetinaModels/LIDC-RetI3D-Solidity-RevisedScoring-HalfDensePyramid_RealTransferI3D_100Epoch_7x230 --rgb_weights_path weight/model_rgb.pth

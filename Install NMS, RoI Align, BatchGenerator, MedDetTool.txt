@@ -1,0 +1,33 @@
+git clone https://github.com/ivanwilliammd/batchgenerators
+cd batchgenerators
+pip3 install -e .
+cd ../I3DR-Net-Transfer-Learning
+
+
+cd cuda_functions/nms_2D/src/cuda/
+nvcc -c -o nms_kernel.cu.o nms_kernel.cu -x cu -Xcompiler -fPIC -arch=sm_60
+cd ../../
+python build.py
+cd ../../
+
+cd cuda_functions/nms_3D/src/cuda/
+nvcc -c -o nms_kernel.cu.o nms_kernel.cu -x cu -Xcompiler -fPIC -arch=sm_60
+cd ../../
+python build.py
+cd ../../
+
+cd cuda_functions/roi_align_2D/roi_align/src/cuda/
+nvcc -c -o crop_and_resize_kernel.cu.o crop_and_resize_kernel.cu -x cu -Xcompiler -fPIC -arch=sm_60
+cd ../../
+python build.py
+cd ../../../
+
+cd cuda_functions/roi_align_3D/roi_align/src/cuda/
+nvcc -c -o crop_and_resize_kernel.cu.o crop_and_resize_kernel.cu -x cu -Xcompiler -fPIC -arch=sm_60
+cd ../../
+python build.py
+cd ../../../
+
+Note: 
+sm_61 for GTX and Tesla P4
+sm_60 for Tesla P100
