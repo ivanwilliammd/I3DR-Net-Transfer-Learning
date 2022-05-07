@@ -34,8 +34,8 @@ The LIDC needs to be preprocessed using [DICOM preprocessing scripts](https://gi
 
 > Setup package in virtual environment
 ```
-git clone https://ivanwilliammd@bitbucket.org/ivanwilliammd/reti3dcustom.git
-cd reti3dcustom
+git clone https://github.com/ivanwilliammd/I3DR-Net-Transfer-Learning
+cd I3DR-Net-Transfer-Learning
 pip3 install -e .
 ```
 
