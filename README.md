@@ -1,16 +1,22 @@
 # I3DR-Net Transfer Learning
 *Official implementation code for "Lung Nodule Detection and Classification from Thorax CT-Scan Using RetinaNet with Transfer Learning" and "Lung Nodule Texture Detection and Classification Using 3D CNN."*
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/lung-nodule-detection-and-classification-from/lung-nodule-classification-on-lidc-idri)](https://paperswithcode.com/sota/lung-nodule-classification-on-lidc-idri?p=lung-nodule-detection-and-classification-from)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/lung-nodule-detection-and-classification-from/lung-nodule-detection-on-lidc-idri)](https://paperswithcode.com/sota/lung-nodule-detection-on-lidc-idri?p=lung-nodule-detection-and-classification-from)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/lung-nodule-detection-and-classification-from/lung-nodule-3d-classification-on-lidc-idri)](https://paperswithcode.com/sota/lung-nodule-3d-classification-on-lidc-idri?p=lung-nodule-detection-and-classification-from)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/lung-nodule-detection-and-classification-from/lung-nodule-3d-detection-on-lidc-idri)](https://paperswithcode.com/sota/lung-nodule-3d-detection-on-lidc-idri?p=lung-nodule-detection-and-classification-from)
+
 Contributor:
 [@ivanwilliammd](https://github.com/ivanwilliammd), [@wawancenggoro](https://github.com/wawancenggoro), [@sliawatimena](https://github.com/sliawatimena)
 
 ## Related publication:
 
-1. [William Harsono I, Liawatimena S, Wawan Cenggoro T. "Lung Nodule Detection and Classification from Thorax CT-Scan Using RetinaNet with Transfer Learning". Journal of King Saud University - Computer and Information Sciences. 2020.](https://doi.org/10.1016/j.jksuci.2020.03.013) 
+1. [Ivan William Harsono, Suryadiputra Liawatimena, Tjeng Wawan Cenggoro. "Lung Nodule Detection and Classification from Thorax CT-Scan Using RetinaNet with Transfer Learning". Journal of King Saud University - Computer and Information Sciences. 2020.](https://doi.org/10.1016/j.jksuci.2020.03.013) 
 2. [Ivan William Harsono, Suryadiputra Liawatimena, Tjeng Wawan Cenggoro. "Lung Nodule Texture Detection and Classification Using 3D CNN." CommIT Journal 13.2, 2019.](https://journal.binus.ac.id/index.php/commit/article/view/5995)
 3. [Lin, Tsung-Yi, et al. "Focal Loss for Dense Object Detection" TPAMI, 2018.](https://arxiv.org/abs/1708.02002)
 4. [Carreira, Joao, and Andrew Zisserman. "Quo vadis, action recognition? a new model and the kinetics dataset." proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017.](https://arxiv.org/abs/1705.07750)
 5. [Jaeger, Paul et al. "Retina U-Net: Embarrassingly Simple Exploitation of Segmentation Supervision for Medical Object Detection" , 2018](https://arxiv.org/abs/1811.08661)
+6. [Paper with Code](https://paperswithcode.com/paper/lung-nodule-detection-and-classification-from)
 
 ## How to cite this code
 *Please cite our paper [1] & [2]*
