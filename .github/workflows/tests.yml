@@ -1,0 +1,30 @@
+name: Tests
+
+# Repo ini dipatok ke torch>=2.2 karena CVE-2025-32434 (kritis). Uji hanya menyentuh jalur CPU:
+# extension CUDA legacy (torch.utils.ffi) memang tidak dapat dibangun di runner tanpa GPU.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Pasang kebutuhan (torch CPU)
+        run: |
+          python -m pip install --upgrade pip
+          pip install --index-url https://download.pytorch.org/whl/cpu torch torchvision
+          pip install -r requirements.txt
+      - name: Uji asap
+        run: python -m pytest tests -q
