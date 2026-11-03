@@ -1,8 +1,14 @@
-cffi==1.11.5
-matplotlib==3.0.0
-numpy==1.22.0
-pandas==0.23.4
-scikit-learn==0.20.0
-sklearn==0.0
-torch==1.13.1
-
+# PyTorch 1.13.1 → >=2.2: CVE-2025-32434 (kritis), CVE-2024-31583, CVE-2024-31580.
+# Catatan: model deteksi (retina_net, retina_unet, ufrcnn, mrcnn) memakai extension CUDA hasil
+# torch.utils.ffi yang dihapus sejak torch 1.5 — lihat cuda_functions/*/_ext/nms/__init__.py.
+# Jalur CPU yang teruji ada di tests/test_smoke.py.
+torch>=2.2
+torchvision>=0.17
+numpy>=1.26,<3
+pandas>=2.0
+scikit-learn>=1.5
+matplotlib>=3.8
+scipy>=1.11
+Pillow>=11.3
+cffi>=1.16
+pytest>=8.0

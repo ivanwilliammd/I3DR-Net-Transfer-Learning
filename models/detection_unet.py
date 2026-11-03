@@ -22,7 +22,7 @@ Unet-like Backbone architecture, with non-parametric heuristics for box detectio
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from scipy.ndimage.measurements import label as lb
+from scipy.ndimage import label as lb
 import numpy as np
 import utils.exp_utils as utils
 import utils.model_utils as mutils

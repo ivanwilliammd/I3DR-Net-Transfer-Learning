@@ -21,7 +21,6 @@ published under MIT license.
 """
 
 import numpy as np
-import scipy.misc
 import scipy.ndimage
 import torch
 from torch.autograd import Variable

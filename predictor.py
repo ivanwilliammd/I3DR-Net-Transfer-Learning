@@ -140,7 +140,9 @@ class Predictor:
         for rank_ix, weight_path in enumerate(weight_paths):
 
             self.logger.info(('tmp ensembling over rank_ix:{} epoch:{}'.format(rank_ix, weight_path)))
-            self.net.load_state_dict(torch.load(weight_path))
+            # `weights_only=True` eksplisit: CVE-2025-32434 berkaitan dengan unpickle yang dapat
+            # dieksekusi; berkas .pth di sini hanya berisi tensor, jadi tidak ada yang hilang.
+            self.net.load_state_dict(torch.load(weight_path, weights_only=True))
             self.net.eval()
             self.rank_ix = str(rank_ix)  # get string of current rank for unique patch ids.
 
